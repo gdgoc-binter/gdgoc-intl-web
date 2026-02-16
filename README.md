@@ -1,8 +1,4 @@
-Here is the final, ready-to-use **README.md**. You can copy this directly into your repository.
 
----
-
-```markdown
 # 🚀 GDG on Campus Binus International
 
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat-square&logo=react)](https://react.dev/)
@@ -161,4 +157,3 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ```
 
-```
