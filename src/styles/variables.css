@@ -1,0 +1,22 @@
+/* M3 Design Tokens Placeholder */
+:root {
+    /* Colors */
+    --md-sys-color-primary: #6750A4;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-primary-container: #EADDFF;
+    --md-sys-color-on-primary-container: #21005D;
+    --md-sys-color-secondary: #625B71;
+    --md-sys-color-on-secondary: #FFFFFF;
+    --md-sys-color-background: #FFFBFE;
+    --md-sys-color-on-background: #1C1B1F;
+    --md-sys-color-surface: #FFFBFE;
+    --md-sys-color-on-surface: #1C1B1F;
+
+    /* Typography */
+    --md-sys-typescale-display-large: 57px;
+    --md-sys-typescale-body-large: 16px;
+
+    /* Layout */
+    --layout-max-width: 1200px;
+    --layout-padding: 1rem;
+}

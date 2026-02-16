@@ -1,7 +1,7 @@
 
 # 🚀 GDG on Campus Binus International
 
-[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat-square&logo=react)](https://react.dev/)
+[![React](https://img.shields.io/badge/React-19.x-61DAFB?style=flat-square&logo=react)](https://react.dev/)
 [![Material Design 3](https://img.shields.io/badge/Design_System-M3-7C4DFF?style=flat-square&logo=materialdesign)](https://m3.material.io/)
 [![Google JS Style](https://img.shields.io/badge/Code_Style-Google-4285F4?style=flat-square&logo=google)](https://google.github.io/styleguide/jsguide.html)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
@@ -21,38 +21,49 @@ Until the Figma file is released, all contributors must:
 
 ---
 
-## 📚 Essential Resources
+## ⚡ Quick Start
 
-**Read these before writing a single line of code.**
+Get up and running in less than 2 minutes.
 
-| Resource | Description | Action |
-| :--- | :--- | :--- |
-| **📘 Google JS Style Guide** | **MANDATORY** Code Standards | [**Read Guidelines**](https://google.github.io/styleguide/jsguide.html) |
-| **📕 Brand Guidelines** | GDGOC Logo & Color Rules | [**Brand Guide**](http://goo.gle/on-campus-brand-guide) |
-| **🛠 M3 Specs** | Component Library Specs | [**m3.material.io**](https://m3.material.io/) |
+```bash
+# 1. Clone the repository
+git clone https://github.com/gdgoc-binus-inter/official-site.git
+cd official-site
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
+```
+
+Visit `http://localhost:5173` to view the app.
 
 ---
 
-## ⚖️ Mandatory Code Standards
+## 📜 Available Scripts
 
-We strictly enforce the **[Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)**.
-To ensure clean, maintainable code, please internalize these rules before contributing:
+In the project directory, you can run:
 
-### 1. Variables & Data Types
-* **Use `const` by default.** Only use `let` if the variable *must* be reassigned.
-* **NEVER use `var`.**
-* Use single quotes `'` for strings. Use backticks `` ` `` only for template literals.
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Starts the development server with HMR. |
+| `npm run build` | Builds the app for production to the `dist` folder. |
+| `npm run lint` | Checks code for style violations (Google Style Guide). |
+| `npm run preview` | Locally preview the production build. |
 
-### 2. Naming Conventions
-* **Variables/Functions:** `camelCase` (e.g., `fetchUserData`, `isActive`)
-* **Classes/Components:** `PascalCase` (e.g., `EventCard`, `UserProfile`)
-* **Constants:** `UPPER_SNAKE_CASE` (e.g., `MAX_RETRY_COUNT`, `API_URL`)
-* **Filenames:** `PascalCase` for Components (`NavBar.jsx`), `kebab-case` for utilities (`date-formatter.js`).
+---
 
-### 3. Formatting
-* **Semicolons (;)** are **REQUIRED**.
-* **2 Spaces** for indentation (No tabs).
-* **Trailing commas** are required in multi-line objects/arrays.
+## ⚖️ Linting & Code Style
+
+We strictly enforce the **[Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)** via ESLint. Use `npm run lint` to check your code.
+
+**Key Rules:**
+- **Indentation:** 2 spaces (no tabs).
+- **Quotes:** Single quotes `'` for strings.
+- **Semicolons:** Required at the end of every statement.
+- **Exports:** Prefer **Named Exports** (`export function Home()`) over default exports.
+- **Trailing Commas:** Required in multi-line objects/arrays.
 
 ---
 
@@ -62,86 +73,45 @@ We use a modular stack optimized for SEO and Developer Experience (DX).
 
 | Component | Tech | Note |
 | :--- | :--- | :--- |
-| **Core** | **React (Vite)** | Fast HMR and build times. |
-| **Language** | **JavaScript (ES6+)** | Following Google Style Guide. |
-| **Styling** | **CSS Modules** | Scoped styling to prevent conflicts. |
-| **UI System** | **Material Design 3** | Implementation via tokens (Colors/Typography). |
-| **Routing** | **React Router v6** | Client-side navigation. |
+| **Core** | **React 19 (Vite)** | Fast HMR and build times. |
+| **Language** | **JavaScript (ES Modules)** | Following Google Style Guide. |
+| **Styling** | **M3 Variables + Global CSS** | Design tokens defined in `src/styles/variables.css`. |
+| **UI System** | **Material Design 3** | Implementation via CSS variables (Colors/Typography). |
+| **Routing** | **React Router v7** | Client-side navigation. |
 
 ---
 
-## 📂 Modular Architecture
+## 📂 Project Structure
 
-We adhere to a **Feature-Based** directory structure. Avoid dumping everything into a generic `components` folder.
+We adhere to a **Feature-Based** directory structure.
 
 ```text
 src/
 ├── assets/              # Global static assets (Brand Logos, Icons)
 ├── components/          # Shared "dumb" UI (Buttons, Inputs, Cards)
-│   ├── Button/
-│   │   ├── Button.jsx
-│   │   └── Button.module.css
-│   └── ...
-├── features/            # "Smart" Feature Logic
-│   ├── events/          # Event lists, registration forms
-│   └── showcase/        # Project gallery logic
-├── hooks/               # Global Hooks (useTheme, useAuth)
+├── features/            # "Smart" Feature Logic (Stateful widgets)
+├── hooks/               # Global Custom Hooks (useTheme, useAuth)
 ├── layouts/             # Page Wrappers (MainLayout, AuthLayout)
 ├── pages/               # Route Entry Points (Home, About, Contact)
-├── styles/              # Global Design Tokens
-│   ├── variables.css    # <-- M3 Color Tokens go here
-│   └── global.css       # Resets and typography
+├── styles/              # Global Styles & Tokens
+│   ├── variables.css    # <-- M3 Color Tokens & Typography
+│   └── global.css       # Resets and global utility classes
 └── utils/               # Helper functions
-
-```
-
----
-
-## 🏃 Getting Started
-
-**1. Clone the Repo**
-
-```bash
-git clone [https://github.com/gdgoc-binus-inter/official-site.git](https://github.com/gdgoc-binus-inter/official-site.git)
-cd official-site
-
-```
-
-**2. Install Dependencies**
-
-```bash
-npm install
-
-```
-
-**3. Run Development Server**
-
-```bash
-npm run dev
-
 ```
 
 ---
 
 ## 🤝 Contribution Workflow
 
-1. **Check Issues:** Look for items tagged `good first issue` or `help wanted` in the [Issues Tab](https://www.google.com/search?q=../../issues).
+1. **Check Issues:** Look for items tagged `good first issue` or `help wanted`.
 2. **Branching:**
-* `feat/feature-name` (New features)
-* `fix/bug-name` (Bug fixes)
-* `docs/update-readme` (Documentation)
-
-
-3. **Commit Messages:** Descriptive and clear.
-* `feat: implement navbar structure`
-* `fix: correct padding on mobile view`
-
-
+    * `feat/feature-name` (New features)
+    * `fix/bug-name` (Bug fixes)
+    * `docs/update-readme` (Documentation)
+3. **Commit Messages:** Descriptive and clear (e.g., `feat: implement navbar structure`).
 4. **Pull Request:**
-* Push your branch and open a PR to `main`.
-* **Self-Review:** Ensure your code follows the **Google JS Style Guide** before requesting review.
-
-
+    * Push your branch and open a PR to `main`.
+    * **Self-Review:** Ensure your code passes `npm run lint` before requesting review.
 
 ---
 
@@ -154,5 +124,3 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 <div align="center">
 <strong>Maintained with ❤️ by the GDGOC Binus International Core Team</strong>
 </div>
-
-
